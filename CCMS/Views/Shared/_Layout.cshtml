@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CCMS</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CCMS.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: #f4f6f9;
+        }
+
+        .navbar {
+            background-color: #007bff; /* Updated to a friendly blue color */
+        }
+
+        .navbar-brand, .nav-link {
+            color: #ffffff;
+        }
+
+            .navbar-brand:hover, .nav-link:hover {
+                color: #d9d9d9;
+            }
+
+        .navbar-toggler {
+            border-color: #ffffff;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"%3E%3Cpath stroke="%23ffffff" stroke-width="2" d="M5 7h20M5 15h20M5 23h20" /%3E%3C/svg%3E');
+        }
+
+        .container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background-color: #ffffff;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+        }
+
+            .footer a {
+                color: #007bff; /* Match footer link color with navbar color */
+            }
+
+                .footer a:hover {
+                    color: #0056b3; /* Darker shade for hover effect */
+                }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .btn {
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <!-- Navbar Brand -->
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CCMS</a>
+
+                <!-- Navbar Toggler for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- Home -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+ 
+                        <!-- Divider -->
+                        <li class="nav-item">
+                            <span class="nav-link disabled">|</span>
+                        </li>
+
+                        <!-- Lecturer Section -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Lecturer" asp-action="Profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Lecturer" asp-action="SubmitClaim">Submit Claim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Lecturer" asp-action="TrackClaim">Track Claim</a>
+                        </li>
+
+                        <!-- Divider -->
+                        <li class="nav-item">
+                            <span class="nav-link disabled">|</span>
+                        </li>
+
+                        <!-- Programme Coordinator Section -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Coordinator" asp-action="ReviewClaims">Review Claims</a>
+                        </li>
+
+                        <!-- Academic Manager Section -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Manager" asp-action="ApproveClaims">Approve Claims</a>
+                        </li>
+                    </ul>
+
+                    <!-- Right side of the Navbar for Account Links -->
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <!-- Login/Logout -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <main role="main" class="pb-4 shadow-sm p-3 mb-5 bg-white rounded">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-muted py-3">
+        <div class="container text-center">
+            &copy; @DateTime.Now.Year - CCMS - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿@* Views/Lecturer/Profile.cshtml *@
+
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <!-- Profile Picture and Heading -->
+        <div class="position-relative">
+            <img src="https://sortitoutsidospaces.b-cdn.net/megapacks/cutoutfaces/originals/2024.00/78090138.png" alt="Lecturer Profile Picture" class="rounded-circle border border-secondary" style="width: 150px; height: 150px; object-fit: cover;">
+            <h2 class="display-4 fw-bold text-dark mt-3">Lecturer Profile</h2>
+        </div>
+    </div>
+
+    <!-- Profile Details Card -->
+    <div class="card shadow-lg border-0 rounded-lg bg-gradient">
+        <div class="card-body p-5 bg-light">
+            <h5 class="card-title mb-4 text-dark border-bottom pb-2">Profile Overview</h5>
+
+            <!-- Lecturer Name, ID, Email, and Phone -->
+            <div class="row mb-4">
+                <!-- Lecturer Name -->
+                <div class="col-md-3 mb-3">
+                    <div class="d-flex flex-column justify-content-center align-items-center bg-primary p-4 rounded-3 shadow-sm border border-dark text-white" style="height: 100%;">
+                        <h6 class="text-light mb-2 text-center">Lecturer Name</h6>
+                        <p class="lead fw-bold text-white text-center">Mike Smith</p>
+                    </div>
+                </div>
+                <!-- Lecturer ID -->
+                <div class="col-md-3 mb-3">
+                    <div class="d-flex flex-column justify-content-center align-items-center bg-primary p-4 rounded-3 shadow-sm border border-dark text-white" style="height: 100%;">
+                        <h6 class="text-light mb-2 text-center">Lecturer ID</h6>
+                        <p class="lead fw-bold text-white text-center">L12345</p>
+                    </div>
+                </div>
+                <!-- Lecturer Email -->
+                <div class="col-md-3 mb-3">
+                    <div class="d-flex flex-column justify-content-center align-items-center bg-primary p-4 rounded-3 shadow-sm border border-dark text-white" style="height: 100%;">
+                        <h6 class="text-light mb-2 text-center">Lecturer Email</h6>
+                        <p class="lead fw-bold text-white text-center">mikesmith@example.com</p>
+                    </div>
+                </div>
+                <!-- Lecturer Phone Number -->
+                <div class="col-md-3 mb-3">
+                    <div class="d-flex flex-column justify-content-center align-items-center bg-primary p-4 rounded-3 shadow-sm border border-dark text-white" style="height: 100%;">
+                        <h6 class="text-light mb-2 text-center">Phone Number</h6>
+                        <p class="lead fw-bold text-white text-center">+1234567890</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hourly Rate, Total Hours Worked, Total Claims Submitted -->
+            <div class="row text-center">
+                <!-- Hourly Rate -->
+                <div class="col-md-4 mb-4">
+                    <div class="bg-primary p-4 rounded-3 shadow-sm border border-dark">
+                        <h6 class="text-light mb-3">Hourly Rate</h6>
+                        <p class="lead fw-bold text-white">R40</p>
+                    </div>
+                </div>
+                <!-- Total Hours Worked -->
+                <div class="col-md-4 mb-4">
+                    <div class="bg-primary p-4 rounded-3 shadow-sm border border-dark">
+                        <h6 class="text-light mb-3">Total Hours Worked</h6>
+                        <p class="lead fw-bold text-white">150</p>
+                    </div>
+                </div>
+                <!-- Total Claims Submitted -->
+                <div class="col-md-4 mb-4">
+                    <div class="bg-primary p-4 rounded-3 shadow-sm border border-dark">
+                        <h6 class="text-light mb-3">Total Claims Submitted</h6>
+                        <p class="lead fw-bold text-white">1</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buttons for Edit and Update -->
+            <div class="text-center">
+                <a href="/Lecturer/Edit" class="btn btn-primary me-2">Edit</a>
+                <button class="btn btn-success">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Include Bootstrap Icons (if needed) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" />
+<!-- Include Bootstrap's JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

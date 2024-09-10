@@ -1,0 +1,191 @@
+﻿@{
+    ViewData["Title"] = "Approve Claims";
+}
+
+<!-- Include Bootstrap and custom CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" />
+
+<style>
+    /* General Body Styling */
+    body {
+        background-color: #f7f8fc;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Page Header Styling */
+    .page-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+        .page-header h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+
+    /* Claim Card Styles */
+    .claim-card {
+        border-radius: 10px;
+        background-color: #fff;
+        border: 1px solid #e3e6f0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s ease;
+        padding: 1.5rem;
+    }
+
+        .claim-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+    .claim-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+        .claim-card-header h5 {
+            font-size: 1.25rem;
+            color: #007bff;
+            margin: 0;
+        }
+
+    .badge {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+    }
+
+    .badge-approved {
+        background-color: #28a745;
+        color: #fff;
+    }
+
+    .badge-pending {
+        background-color: #ffc107;
+        color: #212529;
+    }
+
+    /* Claim Body Styling */
+    .claim-card-body p {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+        color: #495057;
+    }
+
+    /* Button Styling */
+    .btn-custom {
+        border-radius: 30px;
+        font-weight: bold;
+        padding: 0.75rem 1.5rem;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        color: #fff;
+        border: none;
+        width: 48%;
+    }
+
+    .btn-custom-approve {
+        background-color: #28a745;
+    }
+
+    .btn-custom-reject {
+        background-color: #dc3545;
+    }
+
+    .btn-custom-approve:hover {
+        background-color: #218838;
+        box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+    }
+
+    .btn-custom-reject:hover {
+        background-color: #c82333;
+        box-shadow: 0 4px 10px rgba(220, 53, 69, 0.2);
+    }
+
+    /* Responsive layout for buttons */
+    .d-flex {
+        justify-content: space-between;
+    }
+
+    /* Card spacing */
+    .col-md-6 {
+        margin-bottom: 1.5rem;
+    }
+</style>
+
+<div class="container my-5">
+    <!-- Page Header -->
+    <div class="page-header">
+        <h2>Approve Claims</h2>
+        <p>Quickly review and manage submitted claims from lecturers with ease. Approve or reject with just a click.</p>
+    </div>
+
+    <div class="row">
+        <!-- Claim Card 1 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="claim-card">
+                <div class="claim-card-header">
+                    <h5>Claim ID: 001</h5>
+                    <span class="badge badge-approved">Approved</span>
+                </div>
+                <div class="claim-card-body">
+                    <p><strong>Lecturer:</strong> Mike Smith</p>
+                    <p><strong>Total Amount:</strong> R1600</p>
+                    <p><strong>Submitted Date:</strong> 2024/09/09</p>
+                    <div class="d-flex">
+                        <button class="btn btn-custom btn-custom-approve" disabled>
+                            <i class="bi bi-check-circle"></i> Approved
+                        </button>
+                        <button class="btn btn-custom btn-custom-reject" disabled>
+                            <i class="bi bi-x-circle"></i> Reject
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Claim Card 2 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="claim-card">
+                <div class="claim-card-header">
+                    <h5>Claim ID: 002</h5>
+                    <span class="badge badge-pending">Pending</span>
+                </div>
+                <div class="claim-card-body">
+                    <p><strong>Lecturer:</strong> Emilia Hart</p>
+                    <p><strong>Total Amount:</strong> R900</p>
+                    <p><strong>Submitted Date:</strong> 2024/08/19</p>
+                    <div class="d-flex">
+                        <button class="btn btn-custom btn-custom-approve">
+                            <i class="bi bi-check-circle"></i> Approve
+                        </button>
+                        <button class="btn btn-custom btn-custom-reject">
+                            <i class="bi bi-x-circle"></i> Reject
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional claim cards can be added here -->
+    </div>
+</div>
+
+<!-- Bootstrap JavaScript for tooltips -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Initialize tooltips
+    document.addEventListener('DOMContentLoaded', function () {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    });
+</script>

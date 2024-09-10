@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "Submit Claim";
+}
+
+<!-- Include Bootstrap and custom CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" />
+<style>
+    .form-card {
+        border-radius: 1rem;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    .form-card:hover {
+        transform: translateY(-5px);
+    }
+    .form-card-header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 1.5rem;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+    .form-card-body {
+        background-color: #f8f9fa;
+        padding: 2rem;
+    }
+    .form-control, .form-control:focus {
+        border-radius: 0.75rem;
+        box-shadow: none;
+        border-color: #ced4da;
+    }
+    .btn-submit {
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 0.75rem;
+        font-weight: 600;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    .btn-submit:hover {
+        background-color: #0056b3;
+    }
+    .card-title {
+        color: #007bff;
+    }
+    .form-group small {
+        color: #6c757d;
+    }
+    .bg-light-custom {
+        background-color: #e9ecef;
+    }
+</style>
+
+<div class="container my-5">
+    <h2 class="text-center display-3 fw-bold text-primary mb-5">Submit Claim</h2>
+
+    <div class="form-card">
+        <div class="form-card-header">
+            <h5 class="mb-0">Claim Details</h5>
+        </div>
+        <div class="form-card-body">
+            <form enctype="multipart/form-data">
+                <div class="row mb-4">
+                    <div class="col-md-4 mb-4">
+                        <div class="bg-white p-4 rounded-3 shadow-sm border border-light">
+                            <label for="totalHoursWorked" class="form-label fw-semibold">Total Hours Worked</label>
+                            <input type="number" class="form-control text-center" id="totalHoursWorked" name="TotalHoursWorked" value="40" disabled>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="bg-white p-4 rounded-3 shadow-sm border border-light">
+                            <label for="hourlyRate" class="form-label fw-semibold">Hourly Rate</label>
+                            <input type="number" class="form-control text-center" id="hourlyRate" name="HourlyRate" value="40" disabled>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="bg-white p-4 rounded-3 shadow-sm border border-light">
+                            <label for="claimAmount" class="form-label fw-semibold">Claim Amount</label>
+                            <input type="number" class="form-control text-center" id="claimAmount" name="ClaimAmount" value="1600" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-5 bg-light-custom" />
+
+                <h5 class="card-title mb-4">Supporting Documents</h5>
+                <div class="form-group mb-4">
+                    <label for="claimDocuments" class="form-label fw-semibold">Upload Supporting Documents</label>
+                    <input type="file" class="form-control" id="claimDocuments" name="ClaimDocuments" multiple>
+                    <small class="form-text">You can upload multiple files (PDFs, images) to support your claim.</small>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-submit">Submit Claim</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Include Bootstrap's JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

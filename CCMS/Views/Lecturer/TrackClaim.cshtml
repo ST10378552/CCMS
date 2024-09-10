@@ -1,0 +1,149 @@
+﻿@{
+    ViewData["Title"] = "Track Claim Status";
+}
+
+<!-- Include Bootstrap and custom CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" />
+
+<style>
+    /* General Styling */
+    body {
+        background-color: #f4f6f9;
+    }
+
+    h2 {
+        color: #007bff;
+    }
+
+    /* Claim Card Styling */
+    .claim-card {
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background: linear-gradient(135deg, #f7f7f7, #ffffff);
+    }
+
+        .claim-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 35px rgba(0, 0, 0, 0.2);
+        }
+
+    .claim-card-header {
+        background-color: #007bff;
+        color: white;
+        padding: 1rem;
+        border-bottom: 1px solid #007bff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .claim-card-header h5 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+    .claim-card-body {
+        padding: 1.5rem;
+        background-color: white;
+    }
+
+    .badge-approved {
+        background-color: #28a745;
+        color: white;
+        font-size: 0.9rem;
+    }
+
+    .badge-pending {
+        background-color: #ffc107;
+        color: black;
+        font-size: 0.9rem;
+    }
+
+    /* Button Customization */
+    .btn-custom {
+        border-radius: 0.75rem;
+        font-weight: 600;
+        padding: 0.6rem 1.25rem;
+        font-size: 0.9rem;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-view {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-download {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    .btn-view:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .btn-download:hover {
+        background-color: #5a6268;
+        transform: scale(1.05);
+    }
+
+    .text-muted {
+        font-size: 0.9rem;
+        color: #6c757d !important;
+    }
+
+    /* Responsive Gap for Buttons */
+    .d-flex {
+        gap: 10px;
+    }
+</style>
+
+<div class="container my-5">
+    <h2 class="text-center display-4 mb-5">Track Claim Status</h2>
+
+    <div class="row g-4">
+        <!-- Claim Card Example -->
+        <div class="col-md-6 col-lg-4">
+            <div class="claim-card">
+                <div class="claim-card-header">
+                    <h5>Claim ID: 001</h5>
+                    <span class="badge badge-pending px-3 py-2 rounded">Pending</span>
+                </div>
+                <div class="claim-card-body">
+                    <p class="text-muted mb-2"><strong>Submitted Date:</strong> 2024/09/09</p>
+                    <p class="fw-bold mb-4"><strong>Total Amount:</strong> R2200</p>
+                    <div class="d-flex">
+                        <a href="#" class="btn btn-custom btn-view">View Details</a>
+                        <a href="#" class="btn btn-custom btn-download">Download Proof</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Claim Cards -->
+        <div class="col-md-6 col-lg-4">
+            <div class="claim-card">
+                <div class="claim-card-header">
+                    <h5>Claim ID: 002</h5>
+                    <span class="badge badge-approved px-3 py-2 rounded">Approved</span>
+                </div>
+                <div class="claim-card-body">
+                    <p class="text-muted mb-2"><strong>Submitted Date:</strong> 2024/08/10</p>
+                    <p class="fw-bold mb-4"><strong>Total Amount:</strong> R1100</p>
+                    <div class="d-flex">
+                        <a href="#" class="btn btn-custom btn-view">View Details</a>
+                        <a href="#" class="btn btn-custom btn-download">Download Proof</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add more claims as needed -->
+    </div>
+</div>
+
+<!-- Include Bootstrap's JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
